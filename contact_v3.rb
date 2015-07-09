@@ -17,8 +17,8 @@ ActiveRecord::Base.establish_connection(
 
 class Contact < ActiveRecord::Base
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  validates :firstname, presence: true
+  validates :lastname, presence: true
   validates :email, presence: true, length: {minimum: 5}
 
  
@@ -45,7 +45,7 @@ class Application
     lastname= STDIN.gets.chomp
     print "Enter email      : "
     email = STDIN.gets.chomp
-    Contact.create(first_name: firstname, last_name: lastname, email: email)
+    Contact.create(firstname: firstname, lastname: lastname, email: email)
   end
 
   def enter_selection
